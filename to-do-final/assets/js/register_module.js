@@ -4,125 +4,134 @@ var apiUrl = "http://localhost:3000/users";
 
 class UserRegistration {
 
-    constructor() {
+    constructor(username, email, phone, password, confirmPassword, dob, gender, interests, role, address) {
+
         this.apiUrl = apiUrl;
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+        this.dob = dob;
+        this.gender = gender;
+        this.interests = interests;
+        this.role = role;
+        this.address = address;
+
     }
 
-    getFormData() {
-
-        var username = $("#username").val().trim();
-        var email = $("#email").val().trim();
-        var phone = $("#phone").val().trim();
-        var password = $("#password").val().trim();
-        var confirmPassword = $("#confirmPassword").val().trim();
-        var dob = $("#dob").val();
-        var gender = $("input[name='gender']:checked").val();
-
-        var interests = [];
-
-        $("input[name='interests']:checked").each(function () {
-            interests.push($(this).val());
-        });
-
-        var role = $("#role").val();
-        var address = $("#address").val().trim();
-
-        return {
-            username,
-            email,
-            phone,
-            password,
-            confirmPassword,
-            dob,
-            gender,
-            interests,
-            role,
-            address
-        };
-    }
-
-    validate(user) {
+    validate() {
 
         $(".error").text("");
 
         var isValid = true;
 
-        if (user.username == "") {
+        if (this.username == "") {
+
             $("#usernameError").text("Username is required");
             isValid = false;
+
         }
 
-        if (user.email == "") {
+        if (this.email == "") {
+
             $("#emailError").text("Email is required");
             isValid = false;
+
         }
-        else if (!this.checkEmail(user.email)) {
+        else if (!UserRegistration.checkEmail(this.email)) {
+
             $("#emailError").text("Enter a valid email");
             isValid = false;
+
         }
 
-        if (user.phone == "") {
+        if (this.phone == "") {
+
             $("#phoneError").text("Phone number is required");
             isValid = false;
+
         }
-        else if (!this.checkPhone(user.phone)) {
+        else if (!UserRegistration.checkPhone(this.phone)) {
+
             $("#phoneError").text("Phone number must be exactly 10 digits");
             isValid = false;
+
         }
 
-        if (user.password == "") {
+        if (this.password == "") {
+
             $("#passwordError").text("Password is required");
             isValid = false;
+
         }
-        else if (!this.checkPassword(user.password)) {
+        else if (!UserRegistration.checkPassword(this.password)) {
+
             $("#passwordError").text(
                 "Password must be at least 8 characters and include uppercase, lowercase, number, and special character."
             );
+
             isValid = false;
+
         }
 
-        if (user.confirmPassword == "") {
+        if (this.confirmPassword == "") {
+
             $("#confirmPasswordError").text("Confirm password is required");
             isValid = false;
+
         }
-        else if (user.password != user.confirmPassword) {
+        else if (this.password != this.confirmPassword) {
+
             $("#confirmPasswordError").text("Passwords do not match");
             isValid = false;
+
         }
 
-        if (user.dob == "") {
+        if (this.dob == "") {
+
             $("#dobError").text("Date of birth is required");
             isValid = false;
+
         }
-        else if (user.dob > this.getTodayDate()) {
+        else if (this.dob > this.getTodayDate()) {
+
             $("#dobError").text("Date of birth cannot be a future date");
             isValid = false;
+
         }
 
-        if (!user.gender) {
+        if (!this.gender) {
+
             $("#genderError").text("Gender is required");
             isValid = false;
+
         }
 
-        if (user.role == "") {
+        if (this.role == "") {
+
             $("#roleError").text("Role is required");
             isValid = false;
+
         }
 
-        if (user.address == "") {
+        if (this.address == "") {
+
             $("#addressError").text("Address is required");
             isValid = false;
+
         }
 
         return isValid;
+
     }
 
-    async checkDuplicateEmail(user) {
+    async checkDuplicateEmail() {
 
         try {
 
             var response = await fetch(
-                this.apiUrl + "?email=" + encodeURIComponent(user.email)
+                this.apiUrl + "?email=" + encodeURIComponent(this.email)
             );
 
             var users = await response.json();
@@ -130,41 +139,44 @@ class UserRegistration {
             if (users.length > 0) {
 
                 $("#emailError").text("Email already registered");
-
                 return false;
 
-            } else {
+            }
+            else {
 
-                await this.saveUser(user);
-
+                await this.saveUser();
                 return true;
+
             }
 
-        } catch (error) {
+        }
+        catch (error) {
 
             $("#messageBox").html(
                 "<div class='alert alert-danger'>JSON Server is not running.</div>"
             );
 
             return false;
+
         }
+
     }
 
-    async saveUser(user) {
+    async saveUser() {
 
-        var hashedPassword = await bcrypt.hash(user.password, 10);
+        var hashedPassword = await bcrypt.hash(this.password, 10);
 
         var newUser = {
 
-            username: user.username,
-            email: user.email,
-            phone: user.phone,
+            username: this.username,
+            email: this.email,
+            phone: this.phone,
             password: hashedPassword,
-            dob: user.dob,
-            gender: user.gender,
-            interests: user.interests,
-            role: user.role,
-            address: user.address
+            dob: this.dob,
+            gender: this.gender,
+            interests: this.interests,
+            role: this.role,
+            address: this.address
 
         };
 
@@ -175,7 +187,9 @@ class UserRegistration {
                 method: "POST",
 
                 headers: {
+
                     "Content-Type": "application/json"
+
                 },
 
                 body: JSON.stringify(newUser)
@@ -194,12 +208,15 @@ class UserRegistration {
 
             window.location.href = "login.html";
 
-        } catch (error) {
+        }
+        catch (error) {
 
             $("#messageBox").html(
                 "<div class='alert alert-danger'>Unable to register user.</div>"
             );
+
         }
+
     }
 
     clearRegisterDraft() {
@@ -222,44 +239,50 @@ class UserRegistration {
         });
 
         $("#registerForm")[0].reset();
+
     }
-    checkEmail(email) {
 
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   static checkEmail(email) {
 
-    return emailPattern.test(email);
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        return emailPattern.test(email);
+
+    }
+
+    static checkPassword(password) {
+
+        var passwordPattern =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+
+        return passwordPattern.test(password);
+
+    }
+
+   static checkPhone(phone) {
+
+        var phonePattern = /^\d{10}$/;
+
+        return phonePattern.test(phone);
+
+    }
+
+    getTodayDate() {
+
+        var today = new Date();
+
+        var year = today.getFullYear();
+
+        var month =
+            String(today.getMonth() + 1).padStart(2, "0");
+
+        var day =
+            String(today.getDate()).padStart(2, "0");
+
+        return year + "-" + month + "-" + day;
+
+    }
+
 }
-
-checkPassword(password) {
-
-    var passwordPattern =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
-
-    return passwordPattern.test(password);
-}
-
-checkPhone(phone) {
-
-    var phonePattern = /^\d{10}$/;
-
-    return phonePattern.test(phone);
-}
-
-getTodayDate() {
-
-    var today = new Date();
-
-    var year = today.getFullYear();
-
-    var month =
-        String(today.getMonth() + 1).padStart(2, "0");
-
-    var day =
-        String(today.getDate()).padStart(2, "0");
-
-    return year + "-" + month + "-" + day;
-}
-}
-
 
 export default UserRegistration;

@@ -3,10 +3,6 @@ import UserRegistration from "./register_module.js";
 
 var apiUrl = "http://localhost:3000/users";
 
-// OBJECT CREATION
-
-const registration = new UserRegistration();
-
 
 $(document).ready(function () {
 
@@ -145,15 +141,26 @@ $(document).ready(function () {
 
         $("#messageBox").html("");
 
-        var user = registration.getFormData();
+var registration = new UserRegistration(
+    $("#username").val().trim(),
+    $("#email").val().trim(),
+    $("#phone").val().trim(),
+    $("#password").val().trim(),
+    $("#confirmPassword").val().trim(),
+    $("#dob").val(),
+    $("input[name='gender']:checked").val(),
+    $("input[name='interests']:checked").map(function () {
+        return $(this).val();
+    }).get(),
+    $("#role").val(),
+    $("#address").val().trim()
+);
 
-        if (!registration.validate(user)) {
+if (!registration.validate()) {
+    return;
+}
 
-            return;
-
-        }
-
-        await registration.checkDuplicateEmail(user);
+await registration.checkDuplicateEmail();
 
     });
 
@@ -172,7 +179,7 @@ $(document).ready(function () {
 
         }
 
-        if (!checkEmail(emailVal)) {
+        if (!UserRegistration.checkEmail(emailVal)) {
 
             $("#emailError").text("Enter a valid email");
 
@@ -197,7 +204,7 @@ $(document).ready(function () {
 
         }
 
-        if (!checkPassword(passVal)) {
+        if (!UserRegistration.checkPassword(passVal)) {
 
             $("#passwordError").text(
                 "Password must contain at least 8 characters, uppercase, lowercase, number and special character."
@@ -251,7 +258,7 @@ $(document).ready(function () {
 
         }
 
-        if (!checkPhone(phoneVal)) {
+        if (!UserRegistration.checkPhone(phoneVal)) {
 
             $("#phoneError").text(
                 "Phone number must be exactly 10 digits"

@@ -1,184 +1,6 @@
 {
   "users": [
     {
-      "username": "walter",
-      "email": "walter@gmail.com",
-      "password": "123456789@wW",
-      "dob": "2026-05-27",
-      "gender": "Male",
-      "role": "Teacher",
-      "address": "mexico",
-      "id": "8EG0Z4ZTMXM"
-    },
-    {
-      "username": "mike@gmail.com",
-      "email": "mike@gmail.com",
-      "password": "123456789@mM",
-      "dob": "2026-05-21",
-      "gender": "Male",
-      "role": "Employee",
-      "address": "usa",
-      "id": "KLahBrbc86U"
-    },
-    {
-      "username": "adminwer",
-      "email": "mikedemo@gmail.com",
-      "password": "123456789@sS",
-      "dob": "2006-06-28",
-      "gender": "Male",
-      "role": "Employee",
-      "address": "zfdh",
-      "id": "Z7aT5-Z"
-    },
-    {
-      "username": "kim",
-      "email": "kim@gmail.com",
-      "phone": "9123456784",
-      "password": "123456789@kK",
-      "dob": "2005-11-29",
-      "gender": "Female",
-      "interests": [
-        "Music",
-        "Watching Movies"
-      ],
-      "role": "Employee",
-      "address": "mexcio",
-      "id": "jgrDUdvcN0U"
-    },
-    {
-      "username": "kim_2",
-      "email": "kim_2@gmail.com",
-      "phone": "9425454333",
-      "password": "123456789@kK",
-      "dob": "2010-12-22",
-      "gender": "Female",
-      "interests": [
-        "Music",
-        "Sports",
-        "Watching Movies"
-      ],
-      "role": "Employee",
-      "address": "mexico",
-      "id": "6GrIBtUJ4s8"
-    },
-    {
-      "username": "df",
-      "email": "gus2@gmail.com",
-      "phone": "1111111111",
-      "password": "123456789@gG",
-      "dob": "0001-11-11",
-      "gender": "Male",
-      "interests": [
-        "Music",
-        "Sports"
-      ],
-      "role": "Teacher",
-      "address": "sefse1",
-      "id": "r9FfW6b"
-    },
-    {
-      "username": "df",
-      "email": "gus3@gmail.com",
-      "phone": "1111111111",
-      "password": "123456789@gG",
-      "dob": "0001-11-11",
-      "gender": "Male",
-      "interests": [
-        "Music",
-        "Sports"
-      ],
-      "role": "Teacher",
-      "address": "sefse1",
-      "id": "rKn_nur"
-    },
-    {
-      "username": "df",
-      "email": "gus4@gmail.com",
-      "phone": "1111111111",
-      "password": "123456789@gG",
-      "dob": "0001-11-11",
-      "gender": "Male",
-      "interests": [
-        "Music",
-        "Sports"
-      ],
-      "role": "Teacher",
-      "address": "sefse1",
-      "id": "4P96-lR"
-    },
-    {
-      "username": "df",
-      "email": "gus5@gmail.com",
-      "phone": "1111111111",
-      "password": "123456789@gG",
-      "dob": "0001-11-11",
-      "gender": "Male",
-      "interests": [
-        "Music",
-        "Sports"
-      ],
-      "role": "Teacher",
-      "address": "sefse1",
-      "id": "W507Lks"
-    },
-    {
-      "username": "df",
-      "email": "gus6@gmail.com",
-      "phone": "1111111111",
-      "password": "123456789@gG",
-      "dob": "0001-11-11",
-      "gender": "Male",
-      "interests": [
-        "Music",
-        "Sports"
-      ],
-      "role": "Teacher",
-      "address": "sefse1",
-      "id": "v-jwqlB"
-    },
-    {
-      "username": "mike",
-      "email": "mike2@gmail.com",
-      "phone": "1111111111",
-      "password": "123456789@mM",
-      "dob": "0001-11-11",
-      "gender": "Male",
-      "interests": [
-        "Music"
-      ],
-      "role": "Employee",
-      "address": "mexico",
-      "id": "bHaym6t"
-    },
-    {
-      "username": "mike",
-      "email": "mike3@gmail.com",
-      "phone": "1111111111",
-      "password": "123456789@mM",
-      "dob": "0001-11-11",
-      "gender": "Male",
-      "interests": [
-        "Music"
-      ],
-      "role": "Employee",
-      "address": "mexico",
-      "id": "xx0WKmI"
-    },
-    {
-      "username": "mike",
-      "email": "mike4@gmail.com",
-      "phone": "1111111111",
-      "password": "123456789@mM",
-      "dob": "0001-11-11",
-      "gender": "Male",
-      "interests": [
-        "Sports"
-      ],
-      "role": "Student",
-      "address": "mexico",
-      "id": "nStfU7P"
-    },
-    {
       "username": "old man",
       "email": "oldman@gmail.com",
       "phone": "9898989894",
@@ -237,6 +59,66 @@
       "role": "Employee",
       "address": "mexcio 3",
       "id": "h3w-ZJLIIu8"
+    },
+    {
+      "username": "logan4",
+      "email": "logan4@gmail.com",
+      "phone": "9898989894",
+      "password": "$2b$10$4U.5JA7g0QP2gc6dadqS0.ZFn9tlLWJ0WSloQ2dU7WdvnC0dekWxO",
+      "dob": "2010-11-30",
+      "gender": "Male",
+      "interests": [
+        "Music",
+        "Sports"
+      ],
+      "role": "Employee",
+      "address": "aasddasd",
+      "id": "hWsUVdJhoK8"
+    },
+    {
+      "username": "logan5",
+      "email": "logan5@gmail.com",
+      "phone": "9898989894",
+      "password": "$2b$10$2.P4M61gXTYeG7Yt6708UuLL9ILZgc72ZLcffxcVpzLe4vvbH7aKe",
+      "dob": "2010-11-30",
+      "gender": "Male",
+      "interests": [
+        "Sports",
+        "Watching Movies"
+      ],
+      "role": "Student",
+      "address": "efwefwef",
+      "id": "oATM-1ex0yw"
+    },
+    {
+      "username": "logan6",
+      "email": "logan6@gmail.com",
+      "phone": "9898989894",
+      "password": "$2b$10$aDYgogzlxe3s6Y5qVbn9n.r4kc1g8g0.7VIsJ/O0NJlKpDBVo9d72",
+      "dob": "2010-11-30",
+      "gender": "Male",
+      "interests": [
+        "Music",
+        "Watching Movies"
+      ],
+      "role": "Teacher",
+      "address": "deqd",
+      "id": "qWoSzmZkbI4"
+    },
+    {
+      "username": "walter",
+      "email": "walter@gmail.com",
+      "phone": "9898989894",
+      "password": "$2b$10$D0NhIhNADng.humFJ9nXkuz7VuDJ6Nr.ArjNAIyg1aaiGNAoDDkti",
+      "dob": "2010-12-09",
+      "gender": "Male",
+      "interests": [
+        "Music",
+        "Watching Movies"
+      ],
+      "role": "Employee",
+      "address": "adadasdasdxvcv",
+      "id": "KPj9zo9Sd0U"
     }
   ],
   "tasks": [
@@ -382,6 +264,50 @@
       "status": "Completed",
       "deleted": false,
       "id": "V9bPAlheLM8"
+    },
+    {
+      "taskId": 14,
+      "userId": "HlSerlxyUTA",
+      "title": "medicine",
+      "description": "buy dolo",
+      "dueDate": "2026-08-29",
+      "createdDate": "8/25/2026, 10:06:15 AM",
+      "status": "Not Started",
+      "deleted": false,
+      "id": "YuhyV18qV0A"
+    },
+    {
+      "taskId": 15,
+      "userId": "HlSerlxyUTA",
+      "title": "water plant",
+      "description": "water the garden",
+      "dueDate": "2026-08-27",
+      "createdDate": "8/25/2026, 10:50:22 AM",
+      "status": "Not Started",
+      "deleted": false,
+      "id": "gw56Si1EfyA"
+    },
+    {
+      "taskId": 16,
+      "userId": "oATM-1ex0yw",
+      "title": "qwqr",
+      "description": "qweqwe",
+      "dueDate": "2026-08-26",
+      "createdDate": "8/25/2026, 11:09:34 AM",
+      "status": "Completed",
+      "deleted": false,
+      "id": "baW6u2r0Pgo"
+    },
+    {
+      "taskId": 17,
+      "userId": "qWoSzmZkbI4",
+      "title": "wash car and bike",
+      "description": "wash the car and bike",
+      "dueDate": "2026-09-02",
+      "createdDate": "8/25/2026, 11:11:18 AM",
+      "status": "Pending",
+      "deleted": false,
+      "id": "qY-0SQhBpfc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
